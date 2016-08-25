@@ -1,0 +1,156 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.query-jd-view {
+    header {
+        width: pxToRem(159);
+        height: pxToRem(159);
+        margin: pxToRem(126) auto pxToRem(34);
+        @include backgroundImg($query-jd-head-img);
+    }
+    width: pxToRem(580);
+    margin: 0 auto pxToRem(350);
+    .input {
+        width: 100%;
+        height: pxToRem(78);
+        margin: 0 auto pxToRem(18);
+        border: 1px solid #ccc;
+        border-radius: pxToRem(5);
+        input {
+            width: 100%;
+            height: pxToRem(78);
+            font-family: inherit;
+            font-size: pxToRem(28);
+            font-weight: inherit;
+            padding: pxToRem(18);
+            color: $title-color;
+            border: none;
+            box-sizing: border-box;
+            &::-webkit-input-placeholder {
+                color: $font-color;
+                vertical-align: top;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    button {
+        display: block;
+        width: 100%;
+        height: pxToRem(78);
+        margin: pxToRem(36) auto pxToRem(28);
+        border: none;
+        @include border-radius(pxToRem(5));
+        background-color: $main-color;
+        color: $back-color;
+        font-size: pxToRem(28);
+    }
+    .button-title {
+        margin: 0 auto;
+        font-size: pxToRem(22);
+        line-height: pxToRem(30);
+        color: $main-color;
+        text-align: left;
+    }
+    .noneLogin {
+        margin-top: pxToRem(156);
+        font-size: pxToRem(24);
+        color: $main-color;
+        text-align: center;
+    }
+    .card {
+        width: pxToRem(580);
+        margin: 0 auto pxToRem(20);
+        padding: pxToRem(30) pxToRem(30) pxToRem(30);
+        background-color: $back-color;
+        border-bottom: 1px solid $line-color;
+        figure {
+            margin: 0;
+            padding: 0 0 pxToRem(20);
+            border-bottom: 1px solid $line-color;
+        }
+        .card-title {
+            width: pxToRem(400);
+            font-size: pxToRem(28);
+            color: $title-color;
+            font-weight: normal;
+            margin: 0 auto pxToRem(20);
+        }
+        .card-img {
+            width: pxToRem(150);
+            vertical-align: middle;
+        }
+        .card-info {
+            width: pxToRem(370);
+            display: inline-block;
+            margin-left: pxToRem(20);
+            font-size: pxToRem(24);
+            color: $font-color;
+            vertical-align: middle;
+            line-height: pxToRem(32);
+            .card-last-time {
+                margin-top: pxToRem(15);
+                font-size: pxToRem(22);
+            }
+            .card-lint {
+                color: $main-color;
+            }
+            .time-lint {
+                color: $btn-back-color;
+            }
+        }
+        .card-pwd {
+            width: pxToRem(580);
+            margin: pxToRem(30) auto 0;
+            font-size: pxToRem(24);
+            color: $font-color;
+            a {
+                margin-left: pxToRem(58);
+                text-decoration: none;
+                color: $btn-back-color
+            }
+            .card-account {
+                margin-bottom: pxToRem(15);
+            }
+            .card-lint {
+                color: $main-color;
+            }
+        }
+    }
+    .add-more {
+        width: pxToRem(640);
+        height: pxToRem(70);
+        margin: 0 auto;
+        border: none;
+        border-bottom: 1px solid $line-color;
+        color: $font-color;
+        background-color: $back-color;
+        font-size: pxToRem(26);
+    }
+    .no-card {
+        font-size: pxToRem(30);
+        color: $font-color;
+        text-align: center;
+        margin-top: pxToRem(500);
+    }
+    .no-tel {
+        margin: pxToRem(298) auto 0;
+        text-align: center;
+        color: $title-color;
+
+        .no-img {
+            width: pxToRem(163);
+            height: pxToRem(197);
+            margin: 0 auto;
+            @include backgroundImg($query-no);
+        }
+
+        .no-text {
+            font-size: pxToRem(26);
+            margin-top: pxToRem(22);
+        }
+    }
+}

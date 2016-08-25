@@ -1,0 +1,145 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.prize-list-view {
+    @include clear-header();
+
+    .prize-list {
+        padding: 0 pxToRem(30);
+        margin: pxToRem(16) 0;
+        background: $back-color;
+        border: {
+            top: pxToRem(1) solid $line-color;
+            bottom: pxToRem(1) solid $line-color;
+        };
+    }
+
+    .prize-header {
+        @include box(center, justify);
+        height: pxToRem(230);
+    }
+    .good-header {
+        @include box(start, justify);
+        margin-bottom: pxToRem(28);
+    }
+    .good-img {
+        width: pxToRem(166);
+        height: pxToRem(166);
+    }
+    .good-name {
+        width: pxToRem(350);
+        font-size: pxToRem(28);
+        color: $font-text-color;
+        line-height: 1.1;
+    }
+    .good-text {
+        margin-bottom: pxToRem(4);
+        font-size: pxToRem(26);
+        color: $font-color;
+    }
+    .prize-bottom {
+        @include box(center, justify);
+        height: pxToRem(96);
+        border-top: pxToRem(1) solid $line-color;
+        .prize-btn {
+            width: pxToRem(160);
+            height: pxToRem(60);
+            font-size: pxToRem(28);
+            color: $back-color;
+            background: $main-color;
+            @include border-radius(pxToRem(5));
+        }
+    }
+    %progress-line {
+        position: absolute;
+        height: pxToRem(6);
+        width: pxToRem(96);
+        background: $line-color;
+        top: pxToRem(12);
+    }
+    .progress-begin {
+        &:before {
+            content: '';
+            background: $btn-back-color;
+        }
+    }
+    .progress-end {
+        &:before {
+            content: '';
+            background: $btn-back-color;
+        }
+        &:after {
+            content: '';
+            background: $btn-back-color;
+        }
+    }
+    .prize-progress {
+        position: relative;
+        @include box(center, justify);
+        width: pxToRem(270);
+        &:before {
+            content: '';
+            @extend %progress-line;
+            left: pxToRem(40);
+        }
+        &:after {
+            content: '';
+            @extend %progress-line;
+            right: pxToRem(18);
+        }
+        .point-box {
+            position: relative;
+            z-index: 10;
+            margin: {
+                left: pxToRem(20);
+                bottom: pxToRem(30);
+            };
+        }
+        .point {
+            @include box();
+            @include border-box(30);
+            background: $line-color;
+        }
+        %point-box-text {
+            position: absolute;
+            top: pxToRem(40);
+            left: pxToRem(-52);
+            width: pxToRem(130);
+            text-align: center;
+            font-size: pxToRem(22);
+            color: $line-color;
+        }
+        .first:after {
+            content: '中奖啦';
+            @extend %point-box-text;
+        }
+        .between:after {
+            content: '确认地址';
+            @extend %point-box-text;
+        }
+        .over:after {
+            content: '发货';
+            @extend %point-box-text;
+        }
+        .point-text {
+            display: block;
+            color: $back-color;
+            font-size: pxToRem(24);
+        }
+        .point-root {
+            display: block;
+            @include border-box(12);
+            background: $back-color;
+        }
+        .success-box {
+            &:after {
+                color: $btn-back-color;
+            }
+            .success {
+                background: $btn-back-color;
+            }
+        }
+    }
+}

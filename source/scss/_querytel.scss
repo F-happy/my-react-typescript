@@ -1,0 +1,154 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.query-photo-view {
+    .no-tel {
+        margin: pxToRem(298) auto 0;
+        text-align: center;
+        color: $title-color;
+
+        .no-img {
+            width: pxToRem(163);
+            height: pxToRem(197);
+            margin: 0 auto;
+            @include backgroundImg($query-no);
+        }
+
+        .no-text {
+            font-size: pxToRem(26);
+            margin-top: pxToRem(22);
+        }
+    }
+    header {
+        height: pxToRem(60);
+        padding-left: pxToRem(30);
+        line-height: pxToRem(60);
+        font-size: pxToRem(22);
+        color: $font-color;
+    }
+    .list {
+        width: pxToRem(580);
+        margin: 0 auto pxToRem(20);
+        padding: pxToRem(20) pxToRem(30) pxToRem(26);
+        background-color: $back-color;
+        border-bottom: 1px solid $line-color;
+        figure {
+            margin: 0;
+            padding: 0 0 pxToRem(20);
+            border-bottom: 1px solid $line-color;
+        }
+        .list-title {
+            width: pxToRem(400);
+            font-size: pxToRem(28);
+            color: $font-color;
+            font-weight: normal;
+            margin: 0 auto pxToRem(20);
+        }
+        .list-img {
+            width: pxToRem(150);
+            vertical-align: middle;
+        }
+        .list-info {
+            width: pxToRem(370);
+            display: inline-block;
+            margin-left: pxToRem(20);
+            font-size: pxToRem(22);
+            color: $font-color;
+            vertical-align: middle;
+            line-height: pxToRem(32);
+        }
+        .list-pwd {
+            position: relative;
+            width: pxToRem(580);
+            margin: pxToRem(30) auto 0;
+            font-size: pxToRem(24);
+            color: $font-color;
+            .list-account {
+                margin-bottom: pxToRem(15);
+            }
+            .list-lint {
+                color: $main-color;
+            }
+            .list-time {
+                color: $btn-back-color
+            }
+            .tip {
+                position: absolute;
+                right: pxToRem(-30);
+                bottom: 0;
+                width: pxToRem(92);
+                height: pxToRem(35);
+                padding-right: pxToRem(6);
+                font-size: pxToRem(20);
+                line-height: pxToRem(35);
+                text-align: right;
+                color: $back-color;
+                border-bottom-left-radius: pxToRem(45);
+                border-top-left-radius: pxToRem(45);
+            }
+            .ok {
+                background: $main-color;
+            }
+            .error {
+                background: $font-color;
+            }
+            .ing {
+                text-align: center;
+                background: $btn-back-color;
+            }
+        }
+    }
+    .add-more {
+        width: 100%;
+        height: pxToRem(70);
+        margin: 0 auto;
+        display: none;
+        border: none;
+        border-bottom: 1px solid $line-color;
+        color: $font-color;
+        background-color: $back-color;
+        font-size: pxToRem(26);
+    }
+    .btn {
+        position: fixed;
+        bottom: pxToRem(25);
+        right: pxToRem(25);
+        z-index: 99;
+        width: pxToRem(130);
+        height: pxToRem(130);
+        @include backgroundImg($query-btn-img);
+    }
+    .anim-up {
+        backface-visibility: hidden;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        animation: up .3s ease-out 0s 1 forwards;
+    }
+
+    @keyframes up {
+        0% {
+            transform: translate3d(0, 200%, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .anim-down {
+        backface-visibility: hidden;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        animation: down .3s ease-in 0s 1 forwards;
+    }
+
+    @keyframes down {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 200%, 0);
+        }
+    }
+}

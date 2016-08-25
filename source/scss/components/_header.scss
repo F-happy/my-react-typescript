@@ -1,0 +1,31 @@
+@charset "utf-8";
+@import "../utils/colors";
+@import "../utils/mixin";
+@import "../utils/function";
+
+.header-components {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include box(center, justify);
+    width: 100%;
+    height: pxToRem(80);
+    background: $main-color;
+    color: $back-color;
+    font-size: pxToRem(36);
+    z-index: 999;
+    font-family: duobao, sans-serif;
+    %header-icon-base{
+        display: -webkit-box;
+        width: pxToRem(50);
+        height: pxToRem(36);
+    }
+    .header-left {
+        @extend %header-icon-base;
+        margin-left: pxToRem(20);
+    }
+    .header-right {
+        @extend %header-icon-base;
+        margin-right: pxToRem(20);
+    }
+}

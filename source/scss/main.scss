@@ -1,0 +1,101 @@
+@charset "utf-8";
+// 初始化和静态资源
+@import "reset";
+@import "images";
+@import "fonts";
+
+// 公共组件的样式
+@import "components/line_block";
+@import "components/header";
+@import "components/footer";
+@import "components/toast";
+@import "components/swiper";
+
+// 页面样式
+@import "detail_info";
+@import "cal_detail";
+@import "client_server_core";
+//@import "querytel";
+//@import "querycard";
+@import "home";
+@import "share";
+@import "publish";
+@import "me";
+@import "diglog";
+@import "shopcart";
+@import "goods_info";
+@import "pk_view";
+@import "red_pack";
+@import "money_list";
+@import "pay_view";
+@import "old_order_list";
+@import "setting";
+@import "prize_list";
+@import "my_info";
+@import "type_list";
+@import "goods_module";
+@import "prize_info";
+@import "address_list";
+@import "edit_address";
+//@import "push_order";
+@import "login";
+@import "message_system";
+@import "recharge";
+
+body {
+    //background: $back-color;
+    font-family: duobao;
+}
+
+@at-root .console-color {
+    color: $btn-back-color !important;
+}
+@at-root .main-color {
+    color: $main-color !important;
+}
+
+.native-body {
+    background: $body-back-color;
+}
+
+.duobao-help-back {
+    background-image: $help-bg;
+    background-size: 100% auto;
+}
+
+.progress {
+    overflow: hidden;
+    width: pxToRem(200);
+    height: pxToRem(10);
+    margin: pxToRem(5) 0;
+    background: $progress-color;
+    @include border-radius(pxToRem(5));
+    .progress-new {
+        display: block;
+        height: pxToRem(10);
+        background: linear-gradient(to right, #ffb026, #ff8426);
+    }
+}
+
+.redpack-icon, .money-icon, .luck-icon {
+    width: pxToRem(50);
+    height: pxToRem(50);
+}
+
+.redpack-icon {
+    @include backgroundImg($icon-redpack);
+}
+
+.money-icon {
+    @include backgroundImg($icon-money);
+}
+
+.luck-icon {
+    @include backgroundImg($icon-luck);
+}
+
+.you-love-icon {
+    width: pxToRem(37);
+    height: pxToRem(37);
+    @include backgroundImg($icon-like);
+}

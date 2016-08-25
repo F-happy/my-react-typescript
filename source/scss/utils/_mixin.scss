@@ -1,0 +1,41 @@
+@charset "utf-8";
+@import "./function";
+
+//背景图片处理
+@mixin backgroundImg($value) {
+    background: $value no-repeat;
+    background-size: 100% auto;
+}
+
+//超出多少像素则显示省略号
+@mixin omitWord($value) {
+    width: $value;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin border-radius($value) {
+    -webkit-border-radius: $value;
+    border-radius: $value;
+}
+
+//盒子布局函数
+@mixin box($align: center, $pack: center) {
+    $prefix-list: -webkit, -moz;
+    @each $prefix in $prefix-list {
+        display: #{$prefix}-box;
+        #{$prefix}-box-align: $align;
+        #{$prefix}-box-pack: $pack;
+    }
+}
+
+@mixin border-box($diameter){
+    width: pxToRem($diameter);
+    height: pxToRem($diameter);
+    @include border-radius(50%);
+}
+
+@mixin clear-header($top: pxToRem(80)) {
+    margin-top: $top;
+}

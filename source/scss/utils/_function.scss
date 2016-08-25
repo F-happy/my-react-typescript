@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+//将px转换成rem
+@function pxToRem($n) {
+    @if $n == 1 {
+        @return 1px;
+    } @else {
+        @return ($n / 32) + rem;
+    }
+}

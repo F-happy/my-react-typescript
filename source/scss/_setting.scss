@@ -1,0 +1,19 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.setting-view {
+    @include clear-header();
+    .setting-btn {
+        position: fixed;
+        bottom: pxToRem(30);
+        left: 5%;
+        width: 90%;
+        height: pxToRem(80);
+        font-size: pxToRem(30);
+        color: $back-color;
+        background: $main-color;
+        @include border-radius(pxToRem(5));
+    }
+}

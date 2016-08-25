@@ -1,0 +1,66 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.message-system-view {
+    @include clear-header();
+    padding-top: pxToRem(20);
+
+    .message-list {
+        width: pxToRem(550);
+        margin: 0 auto pxToRem(20);
+        padding: pxToRem(20);
+        background: $back-color;
+        @include border-radius(pxToRem(5));
+        .goods-img {
+            width: pxToRem(150);
+            height: pxToRem(150);
+        }
+    }
+    .message-body {
+        @include box(center, justify);
+        margin: pxToRem(20) 0 pxToRem(10);
+        color: $font-color;
+        font-size: pxToRem(28);
+        line-height: 1.2;
+    }
+    .message-header {
+        @include box(center, justify);
+        .message-title {
+            color: $title-color;
+            font-size: pxToRem(28);
+        }
+        .message-time {
+            font-size: pxToRem(22);
+            color: $font-color;
+        }
+    }
+    .message-footer {
+        font-size: pxToRem(28);
+        color: $btn-back-color;
+        text-align: right;
+    }
+    .message-text {
+        text-indent: 2em;
+    }
+    .goods-info {
+        width: pxToRem(380);
+        .goods-code {
+            margin-top: pxToRem(30);
+        }
+    }
+    .red-pack-box {
+        @include box(center, justify);
+        .red-pack-img {
+            width: pxToRem(98);
+            height: pxToRem(110);
+        }
+        .red-pack-info {
+            width: pxToRem(430);
+        }
+        .message-footer {
+            margin-top: pxToRem(25);
+        }
+    }
+}

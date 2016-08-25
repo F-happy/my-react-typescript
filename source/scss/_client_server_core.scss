@@ -1,0 +1,199 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+@import "images";
+
+.csc-view {
+    @include clear-header();
+    padding-top: pxToRem(20);
+    .csc-header {
+        height: pxToRem(170);
+        display: -webkit-box;
+        margin: 0 auto pxToRem(20);
+        background: $back-color;
+        border: pxToRem(1) solid $line-color;
+
+        .row {
+            width: 50%;
+            @include box();
+        }
+
+        h3 {
+            font: {
+                size: pxToRem(30);
+                weight: bold;
+            }
+            color: $main-color;
+            margin: 0 auto;
+        }
+
+        p {
+            margin-top: pxToRem(8);
+            font-size: pxToRem(22);
+            color: $title-color;
+        }
+
+        .img {
+            width: pxToRem(106);
+            height: pxToRem(106);
+            margin: 0 pxToRem(16) 0 pxToRem(30);
+        }
+
+        .card {
+            @include backgroundImg($card-img);
+        }
+
+        .phone {
+            @include backgroundImg($phone-img);
+        }
+
+        .line {
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: pxToRem(20);
+                left: 0;
+                height: pxToRem(130);
+                width: 1px;
+                background: $line-color;
+            }
+        }
+    }
+
+    .tab {
+        @include box();
+        height: pxToRem(80);
+        border-bottom: 1px solid $line-color;
+        background: $back-color;
+
+        li {
+            width: 50%;
+            height: pxToRem(80);
+            line-height: pxToRem(80);
+            font-size: pxToRem(28);
+            text-align: center;
+        }
+
+        .act {
+            position: relative;
+            color: $main-color;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: pxToRem(100);
+                bottom: 0;
+                width: pxToRem(120);
+                height: pxToRem(6);
+                background: $main-color;
+            }
+        }
+    }
+    .content {
+        margin-bottom: pxToRem(50);
+        font-size: pxToRem(28);
+        overflow: hidden;
+
+        .row {
+            width: pxToRem(1500);
+            height: pxToRem(90);
+            background: $back-color;
+            overflow: hidden;
+            text-align: left;
+            border-bottom: 1px solid $line-color;
+        }
+
+        .csc-title {
+            display: inline-block;
+            width: pxToRem(640);
+            height: pxToRem(90);
+            line-height: pxToRem(90);
+            margin-left: pxToRem(30);
+        }
+
+        .pre {
+            float: right;
+            margin: {
+                top: pxToRem(30);
+                right: pxToRem(56);
+            }
+            width: pxToRem(40);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            height: pxToRem(20);
+            &::before {
+                content: '';
+                height: pxToRem(20);
+                width: pxToRem(20);
+                display: block;
+                border: 2px solid $font-color;
+                border-right-width: 0;
+                border-top-width: 0;
+                transform: rotate(-45deg);
+                position: absolute;
+                bottom: pxToRem(7);
+                left: pxToRem(7);
+            }
+        }
+        .pre-rotating {
+            @extend .pre;
+            transform: rotateX(180deg);
+        }
+
+        .text {
+            display: none;
+            overflow: hidden;
+            padding: pxToRem(18) pxToRem(30);
+            font-size: pxToRem(26);
+            line-height: pxToRem(28);
+            text-indent: 2em;
+            color: $font-text-color;
+            background: $text-back-color;
+            border-bottom: 1px solid $line-color;
+        }
+    }
+    .add-qq {
+        position: fixed;
+        right: pxToRem(30);
+        bottom: pxToRem(56);
+        width: pxToRem(129);
+        height: pxToRem(129);
+        @include backgroundImg($add-qq);
+    }
+    .anim-right {
+        backface-visibility: hidden;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        animation: right .2s ease-out 0s 1 forwards;
+    }
+
+    @keyframes right {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+        100% {
+            transform: translate3d(pxToRem(-670), 0, 0);
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+
+    .anim-left {
+        backface-visibility: hidden;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        animation: left .2s ease-out 0s 1 forwards;
+    }
+
+    @keyframes left {
+        0% {
+            transform: translate3d(pxToRem(-670), 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+}

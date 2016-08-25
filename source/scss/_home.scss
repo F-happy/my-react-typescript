@@ -1,0 +1,130 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+@import "images";
+
+.banner-img {
+    width: pxToRem(640);
+}
+
+.controller-list {
+    @include box(center, justify);
+    width: pxToRem(540);
+    height: pxToRem(183);
+    padding: 0 pxToRem(50);
+    .controller-img {
+        width: pxToRem(84);
+        height: pxToRem(84);
+        margin: 0 auto;
+    }
+    .controller-title {
+        margin-top: pxToRem(12);
+        font-size: pxToRem(24);
+        text-align: center;
+        color: $font-text-color;
+    }
+    .box {
+        display: block;
+    }
+    .pk-img {
+        @include backgroundImg($index-pk-img);
+    }
+    .about-img {
+        @include backgroundImg($index-about-img);
+    }
+    .formula-img {
+        @include backgroundImg($index-formula-img);
+    }
+    .service-img {
+        @include backgroundImg($index-service-img);
+    }
+}
+
+.home-view {
+    margin: {
+        top: pxToRem(80);
+        bottom: pxToRem(100);
+    };
+}
+
+.rank-controller {
+    @include box(center, justify);
+    height: pxToRem(77);
+    margin: 0 auto;
+    padding: 0 pxToRem(35);
+    border: {
+        top: 1px solid $line-color;
+        bottom: 1px solid $line-color;
+    }
+    .rank-result {
+        height: pxToRem(77);
+        line-height: pxToRem(77);
+        color: $title-color;
+        font-size: pxToRem(28);
+    }
+    .active {
+        position: relative;
+        color: $main-color;
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: pxToRem(56);
+            height: pxToRem(6);
+            background: $main-color;
+        }
+    }
+}
+
+.good {
+    position: relative;
+    display: inline-block;
+    padding: pxToRem(20) pxToRem(25) pxToRem(15);
+    width: pxToRem(268);
+    border-bottom: pxToRem(1) solid $line-color;
+
+    &:nth-child(odd) {
+        border-right: pxToRem(1) solid $line-color;
+    }
+    .good-title {
+        width: pxToRem(270);
+        margin: pxToRem(15) auto;
+        padding: 0;
+        color: $title-color;
+        font: {
+            size: pxToRem(25);
+            weight: normal;
+        }
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .good-icon {
+        display: block;
+        width: pxToRem(260);
+        height: pxToRem(260);
+        margin: 0 auto;
+    }
+    .good-total {
+        color: $font-text-color;
+        font-size: pxToRem(22);
+    }
+    .good-remain {
+        @extend .good-total;
+    }
+    @at-root .color-active {
+        color: $main-color;
+    }
+    .icon-add-shop {
+        position: absolute;
+        bottom: pxToRem(17);
+        right: pxToRem(25);
+        @include border-box(54);
+        color: $back-color;
+        background: $btn-back-color;
+        font-size: pxToRem(28);
+    }
+}

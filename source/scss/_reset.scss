@@ -1,0 +1,81 @@
+@charset "utf-8";
+/*- reset -*/
+html {
+    -webkit-text-size-adjust: none;
+    -webkit-appearance: none;
+}
+
+html, body, div, p, header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font: {
+        weight: inherit;
+        style: inherit;
+        size: 100%;
+        family: inherit;
+    }
+    vertical-align: baseline;
+}
+
+html {
+    line-height: 1;
+    color: black;
+    background: white;
+    font-family: Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    //clear click shadow in ios
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+i {
+    display: inline-block;
+    font-style: normal;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    &:focus {
+        outline: none;
+    }
+    font-family: duobao;
+}
+
+img {
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+}
+
+/**
+ *  移动设备常用mediaQuery
+ *  应用于1024px以下设备
+ *  移动设备的基本字体为16px
+ */
+$list: (32: (640, 1023), 21.2: (424, 639), 20.7: (414, 423), 19.2: (384, 413), 18.75: (375, 383), 18: (360, 374), 16: (320, 359));
+
+@each $size, $sizeList in $list {
+    @media screen and (min-width: #{nth($sizeList,1)}px) and (max-width: #{nth($sizeList,2)}px) {
+        html {
+            font-size: #{$size}px;
+        }
+    }
+}

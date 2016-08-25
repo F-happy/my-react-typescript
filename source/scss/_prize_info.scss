@@ -1,0 +1,121 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.prize-info-view {
+    @include clear-header();
+
+    .prize-header {
+        padding: 0 pxToRem(30);
+        @include box(center, justify);
+        height: pxToRem(230);
+        background: $back-color;
+    }
+    .good-header {
+        @include box(start, justify);
+        margin-bottom: pxToRem(28);
+    }
+    .good-img {
+        width: pxToRem(166);
+        height: pxToRem(166);
+    }
+    .good-name {
+        width: pxToRem(390);
+        font-size: pxToRem(28);
+        color: $font-text-color;
+        line-height: 1.1;
+    }
+    .good-text {
+        margin-bottom: pxToRem(4);
+        font-size: pxToRem(26);
+        color: $font-color;
+    }
+    .prize-title {
+        position: relative;
+        height: pxToRem(56);
+        padding-left: pxToRem(30);
+        line-height: pxToRem(56);
+        color: $font-text-color;
+        font-size: pxToRem(28);
+        border: {
+            top: pxToRem(1) solid $line-color;
+            bottom: pxToRem(1) solid $line-color;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: pxToRem(10);
+            height: pxToRem(56);
+            background: $main-color;
+        }
+    }
+    .logistics-info {
+        @include box();
+        height: pxToRem(128);
+        background: $back-color;
+        font-size: pxToRem(26);
+        color: $font-color;
+        .logistics {
+            width: pxToRem(290);
+            color: $title-color;
+            margin-left: pxToRem(6);
+        }
+        %logistics-bottom {
+            margin-bottom: pxToRem(16);
+        }
+        .logistics-com {
+            @extend %logistics-bottom;
+        }
+        .logistics-name {
+            @extend %logistics-bottom;
+            font-size: pxToRem(28);
+        }
+        .logistics-btn {
+            width: pxToRem(164);
+            height: pxToRem(62);
+            font-size: pxToRem(28);
+            color: $font-text-color;
+            background: $back-color;
+            border: pxToRem(1) solid $title-color;
+        }
+    }
+    .prize-good-info {
+        @include box(start, center);
+        padding: pxToRem(30);
+        background: $back-color;
+        font-size: pxToRem(26);
+        color: $font-color;
+        line-height: 1.2;
+        .user-info {
+            width: pxToRem(450);
+            margin-left: pxToRem(10);
+        }
+        .user-between {
+            margin: pxToRem(16) 0;
+        }
+        .user-name {
+            font-size: pxToRem(28);
+            color: $title-color;
+        }
+    }
+    .prize-btn-success {
+        display: block;
+        width: pxToRem(580);
+        height: pxToRem(80);
+        margin: pxToRem(46) auto;
+        background: $main-color;
+        font-size: pxToRem(30);
+        color: $back-color;
+        @include border-radius(pxToRem(5));
+    }
+    .prize-phone {
+        height: pxToRem(82);
+        padding-left: pxToRem(30);
+        background: $back-color;
+        line-height: pxToRem(82);
+        font-size: pxToRem(28);
+    }
+}

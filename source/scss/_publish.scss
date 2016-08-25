@@ -1,0 +1,84 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.publish-view {
+    @include clear-header();
+    margin-bottom: pxToRem(100);
+    background: $back-color;
+
+    .publish-body {
+        @include box();
+        width: 100%;
+        height: pxToRem(200);
+        border-bottom: pxToRem(1) solid $line-color;
+
+        .good-img {
+            width: pxToRem(140);
+            height: pxToRem(140);
+        }
+
+        .times {
+            @include box(center, start);
+            margin-top: pxToRem(20);
+            height: pxToRem(50);
+            background: $main-color;
+            @include border-radius(pxToRem(5));
+            color: $back-color;
+            font-size: pxToRem(24);
+            line-height: pxToRem(50);
+            * {
+                display: -webkit-box;
+            }
+            .time-icon {
+                margin: 0 pxToRem(10) 0 pxToRem(15);
+            }
+            .time-now {
+                padding-top: pxToRem(4);
+                font-size: pxToRem(40);
+            }
+            .time-text {
+                margin-right: pxToRem(20);
+            }
+        }
+    }
+    .good-info {
+        margin-left: pxToRem(25);
+        width: pxToRem(420);
+        .good-title {
+            font-size: pxToRem(28);
+            color: $title-color;
+        }
+    }
+    .good-money {
+        margin: pxToRem(8) 0 0;
+        font-size: pxToRem(24);
+        color: $font-color;
+    }
+    .times-error {
+        margin-top: pxToRem(20);
+        font-size: pxToRem(26);
+        color: $main-color;
+    }
+    .user-info {
+        position: relative;
+        margin-left: pxToRem(25);
+        width: pxToRem(420);
+        .user-name {
+            margin-bottom: pxToRem(20);
+            font-size: pxToRem(28);
+            color: $title-color;
+        }
+        .user-join, .luck-num, .join-time {
+            @extend .good-money;
+        }
+        .user-icon {
+            @include border-box(76);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+        }
+    }
+}

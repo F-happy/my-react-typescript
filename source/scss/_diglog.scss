@@ -1,0 +1,143 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+@import "images";
+
+.dig-log {
+    //display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 30%;
+    width: 100%;
+    height: 100%;
+    background: rgba(000, 000, 000, .5);
+    z-index: 999;
+}
+
+.qcode-alert-box {
+    position: relative;
+    width: pxToRem(520);
+    height: pxToRem(545);
+    margin: 0 auto;
+    padding-top: pxToRem(55);
+    background: $back-color;
+    @include border-radius(pxToRem(5));
+    text-align: center;
+    color: $font-text-color;
+    .qcode-title {
+        font-size: pxToRem(26);
+    }
+    .footer-box {
+        font-size: pxToRem(24);
+    }
+    .code-footer {
+        @include box();
+        border-top: pxToRem(1) solid $line-color;
+        .footer-box {
+            width: 50%;
+        }
+    }
+    .close-icon {
+        position: absolute;
+        top: pxToRem(30);
+        right: pxToRem(30);
+        width: pxToRem(32);
+        height: pxToRem(32);
+        font-size: pxToRem(32);
+        text-align: center;
+        color: $font-color;
+    }
+    .qcode-share {
+        margin: pxToRem(17) auto pxToRem(24);
+        width: pxToRem(287);
+        height: pxToRem(287);
+        @include backgroundImg($icon-qcode-share);
+    }
+    .wechat-icon-big, .friend-icon-big {
+        width: pxToRem(109);
+        height: pxToRem(109);
+        margin: pxToRem(20) auto pxToRem(10);
+    }
+    .wechat-icon-big {
+        @include backgroundImg($icon-wechat);
+    }
+    .friend-icon-big {
+        @include backgroundImg($icon-friend);
+    }
+}
+
+.invited-alert-box {
+    position: relative;
+    width: pxToRem(514);
+    margin: 0 auto;
+    padding-top: pxToRem(80);
+    background: $back-color;
+    @include border-radius(pxToRem(10));
+    .invite-header {
+        position: absolute;
+        top: pxToRem(-23);
+        left: pxToRem(0);
+        width: pxToRem(515);
+        height: pxToRem(102);
+        @include backgroundImg($icon-invited);
+    }
+    .btn-box {
+        @include box();
+        margin-top: pxToRem(20);
+        border-top: pxToRem(1) solid $line-color;
+        button {
+            display: -webkit-box;
+            width: 50%;
+            height: pxToRem(90);
+            border: none;
+            background: $back-color;
+            &:first-child {
+                border-right: pxToRem(1) solid $line-color;
+            }
+        }
+        .invite-none {
+            border-bottom-left-radius: pxToRem(10);
+            color: $font-text-color;
+            font-size: pxToRem(30);
+        }
+        .invite-ok {
+            border-bottom-right-radius: pxToRem(10);
+            color: $main-color;
+            font-size: pxToRem(30);
+        }
+    }
+    .input-title {
+        color: $btn-back-color;
+        font-size: pxToRem(24);
+        text-align: center;
+    }
+    .invite-input {
+        margin: pxToRem(26) auto pxToRem(14);
+        width: pxToRem(280);
+        height: pxToRem(88);
+        @include border-radius(pxToRem(5));
+        background: $body-back-color;
+        border: pxToRem(1) solid $progress-color;
+        overflow: hidden;
+        input {
+            padding-left: pxToRem(20);
+            width: 100%;
+            height: pxToRem(88);
+            font-family: inherit;
+            font-weight: inherit;
+            font-size: pxToRem(28);
+            border: none;
+            box-sizing: border-box;
+            background: $body-back-color;
+            &::-webkit-input-placeholder {
+                color: #999;
+                vertical-align: top;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

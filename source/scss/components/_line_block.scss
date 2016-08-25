@@ -1,0 +1,31 @@
+@charset "utf-8";
+@import "../utils/colors";
+@import "../utils/mixin";
+@import "../utils/function";
+
+.inline-block-components {
+    @include box(center, justify);
+    height: pxToRem(90);
+    padding: 0 pxToRem(25);
+    border-bottom: pxToRem(1) solid $line-color;
+    font-size: pxToRem(30);
+    color: $title-color;
+    background: $back-color;
+    .list-content {
+        display: block;
+        width: 82%;
+    }
+    @at-root .right-icon {
+        display: -webkit-box;
+        width: pxToRem(32);
+        height: pxToRem(32);
+        color: $font-color;
+    }
+    .left-icon {
+        width: pxToRem(41);
+        height: pxToRem(41);
+        font-size: pxToRem(42);
+        color: $font-color;
+        margin-right: pxToRem(30);
+    }
+}

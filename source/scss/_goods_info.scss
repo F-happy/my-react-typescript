@@ -1,0 +1,266 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+@import "images";
+
+.good-info-view {
+    @include clear-header();
+    margin-bottom: pxToRem(100);
+
+    .good-info-header {
+        background: $back-color;
+        position: relative;
+        width: pxToRem(640);
+        height: pxToRem(400);
+        margin: 0 auto;
+        overflow: hidden;
+        .good-info-img {
+            display: block;
+            width: pxToRem(400);
+            height: pxToRem(400);
+            margin: 0 auto;
+        }
+        .header-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: pxToRem(52);
+            width: 100%;
+            text-align: center;
+            line-height: pxToRem(52);
+            background-color: rgba(000, 000, 000, .3);
+            font-size: pxToRem(22);
+            color: $back-color;
+        }
+    }
+    .list-text {
+        padding: 0 pxToRem(30);
+        margin-top: pxToRem(70);
+        border: {
+            bottom: pxToRem(2) solid #d4d4d4;
+            top: pxToRem(2) solid #d4d4d4;
+        }
+        background: $back-color;
+        li {
+            @include box(center, justify);
+            height: pxToRem(94);
+            border-bottom: pxToRem(1) solid $line-color;
+            font-size: pxToRem(30);
+            color: $font-color;
+            * {
+                display: -webkit-box;
+            }
+        }
+    }
+    .good-info {
+        width: pxToRem(640);
+        margin: 0 auto;
+        overflow: hidden;
+        color: $font-color;
+        font-size: pxToRem(28);
+        background: $back-color;
+        padding-top: pxToRem(30);
+        .good-title {
+            width: pxToRem(590);
+            margin: 0 auto pxToRem(20);
+            line-height: pxToRem(34);
+            color: $body-color;
+            .good-state {
+                width: pxToRem(80);
+                text-align: center;
+                height: pxToRem(32);
+                line-height: pxToRem(36);
+                vertical-align: top;
+                font-size: pxToRem(22);
+                color: $back-color;
+                @include border-radius(5px);
+                display: inline-block;
+            }
+            .now {
+                background-color: $btn-back-color;
+            }
+            .ing, .old {
+                background-color: $main-color;
+            }
+        }
+        .progress {
+            overflow: hidden;
+            width: pxToRem(590);
+            margin: 0 auto;
+            background: $progress-color;
+            @include border-radius(pxToRem(5));
+            .progress-now {
+                display: block;
+                height: pxToRem(10);
+                background: linear-gradient(to right, #ffb026, #ff8426);
+            }
+        }
+        .good-numbers {
+            width: pxToRem(590);
+            margin: pxToRem(10) auto pxToRem(20);
+            font-size: pxToRem(26);
+
+            .remain-right {
+                float: right;
+            }
+
+            #remain {
+                color: $main-color;
+            }
+        }
+    }
+    .waiting-warp {
+        width: pxToRem(570);
+        height: pxToRem(70);
+        margin: 0 auto pxToRem(20);
+        color: $back-color;
+        background-color: $main-color;
+        line-height: pxToRem(70);
+        padding-left: pxToRem(20);
+        overflow: hidden;
+        clear: both;
+
+        .ewards-down {
+            float: right;
+            margin-right: pxToRem(20);
+        }
+    }
+    .reward-box {
+        width: 85%;
+        margin: 0 auto pxToRem(20);
+        position: relative;
+        overflow: hidden;
+        padding: pxToRem(14);
+        box-shadow: 0 pxToRem(1) pxToRem(20) 0 #ddd;
+    }
+    .share-text {
+        height: pxToRem(90);
+        line-height: pxToRem(90);
+        text-align: center;
+        border: {
+            bottom: pxToRem(2) solid #d4d4d4;
+            top: pxToRem(2) solid #d4d4d4;
+        }
+    }
+    .rewards-wrap {
+        position: relative;
+        background: #fdf2ef;
+        font-size: pxToRem(24);
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: pxToRem(80);
+            height: pxToRem(80);
+            background: $winnerImg no-repeat;
+            background-size: 100% auto;
+        }
+        .user-avatar {
+            display: inline-block;
+            @include border-box(72);
+            margin-left: pxToRem(14);
+            margin-top: pxToRem(18);
+            vertical-align: top;
+        }
+        .rewards-info {
+            display: inline-block;
+            list-style: none;
+            margin: pxToRem(30) 0 pxToRem(10) pxToRem(30);
+
+            li {
+                margin-bottom: pxToRem(10);
+            }
+
+            .name {
+                color: $btn-back-color;
+            }
+
+            .num {
+                color: $main-color;
+            }
+        }
+        .rewards-results {
+            height: pxToRem(70);
+            margin: 0 auto;
+            color: $back-color;
+            font-size: pxToRem(28);
+            background-color: $main-color;
+            line-height: pxToRem(65);
+            padding-left: pxToRem(30);
+            .rewards-special {
+                font-size: pxToRem(34);
+            }
+            .rewards-down {
+                margin-left: pxToRem(80);
+            }
+        }
+    }
+    .share-user-list {
+        margin: pxToRem(35) auto 0;
+        padding-bottom: pxToRem(20);
+        .list-title-time {
+            width: pxToRem(129);
+            height: pxToRem(36);
+            line-height: pxToRem(35);
+            padding-left: pxToRem(26);
+            color: $back-color;
+            font-size: pxToRem(20);
+            background-color: #b4b4b4;
+            @include border-radius(0 2em 2em 0);
+        }
+        .users {
+            margin-left: pxToRem(25);
+            padding: {
+                top: pxToRem(10);
+                left: pxToRem(35);
+                bottom: pxToRem(10);
+            }
+            border-left: pxToRem(2) solid #b4b4b4;
+            font-size: pxToRem(22);
+            color: $font-color;
+            .user-img {
+                @include border-box(72);
+            }
+            .user-info {
+                display: inline-block;
+                margin-left: pxToRem(25);
+                line-height: pxToRem(25);
+
+                .username {
+                    font-size: pxToRem(24);
+                    color: $btn-back-color;
+                    margin-bottom: pxToRem(10);
+                }
+                .user-join {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+    .good-footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        @include box(center, justify);
+        width: pxToRem(580);
+        height: pxToRem(120);
+        padding: 0 pxToRem(30);
+        background: $back-color;
+        .add-shop {
+            display: -webkit-box;
+            width: pxToRem(50);
+            height: pxToRem(50);
+            font-size: pxToRem(48);
+            color: $main-color;
+        }
+        .good-btn {
+            width: pxToRem(256);
+            height: pxToRem(80);
+            background: $main-color;
+            color: $back-color;
+            font-size: pxToRem(32);
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@charset "utf-8";
+@import "../utils/colors";
+@import "../utils/mixin";
+@import "../utils/function";
+
+.swipe-components {
+    @include box();
+    width: 100%;
+    height: pxToRem(280);
+    overflow: hidden;
+}

@@ -1,0 +1,153 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.red-pack-view {
+    @include clear-header();
+    background: $body-back-color;
+
+    .red-pack-controller {
+        @include box();
+        background: $back-color;
+        margin: 0 auto;
+        border-top: 1px solid $line-color;
+        border-bottom: 1px solid $line-color;
+        .red-pack-result {
+            width: 50%;
+            height: pxToRem(80);
+            line-height: pxToRem(80);
+            text-align: center;
+            color: $title-color;
+            font-size: pxToRem(28);
+        }
+        .active {
+            position: relative;
+            color: $main-color;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: pxToRem(320);
+                height: pxToRem(8);
+                background: $main-color;
+            }
+        }
+    }
+
+    .red-pack-lists {
+        padding: pxToRem(20);
+    }
+
+    .red-pack {
+        @include box(center, start);
+        height: pxToRem(210);
+        background: $back-color;
+        margin-bottom: pxToRem(18);
+        @include border-radius(pxToRem(10));
+        overflow: hidden;
+        border: pxToRem(1) solid $progress-color;
+        .red-left-box {
+            position: relative;
+            width: pxToRem(180);
+            height: pxToRem(210);
+            color: $back-color;
+            background: $red-pack-bg-color;
+            text-align: center;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: pxToRem(-8);
+                width: pxToRem(10);
+                height: pxToRem(210);
+                @include backgroundImg($red-pack-border);
+            }
+        }
+        .red-right-box {
+            width: pxToRem(356);
+            margin-left: pxToRem(20);
+        }
+        .money {
+            @include box(end, end);
+            height: pxToRem(106);
+            text-align: right;
+            font-size: pxToRem(32);
+        }
+        .money-num {
+            margin: 0 pxToRem(22) 0 pxToRem(10);
+            font-size: pxToRem(84);
+        }
+        .money-num-small {
+            margin: 0 pxToRem(22) 0 pxToRem(10);
+            font-size: pxToRem(64);
+        }
+        .line {
+            position: relative;
+            margin: 0 auto pxToRem(10);
+            &:before {
+                content: '';
+                position: absolute;
+                left: pxToRem(24);
+                top: pxToRem(15);
+                width: pxToRem(56);
+                height: pxToRem(1);
+                background: $back-color;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                right: pxToRem(24);
+                top: pxToRem(15);
+                width: pxToRem(56);
+                height: pxToRem(1);
+                background: $back-color;
+            }
+        }
+        .result {
+            font-size: pxToRem(24);
+        }
+        .red-title {
+            margin: 0;
+            font-size: pxToRem(32);
+            font-weight: normal;
+        }
+        .text {
+            height: pxToRem(54);
+            margin: pxToRem(14) 0;
+            font-size: pxToRem(24);
+            color: $font-text-color;
+        }
+        .time-text {
+            margin-bottom: pxToRem(6);
+            font-size: pxToRem(22);
+            color: $font-color;
+        }
+        .right-icon {
+            color: #c7c7c7;
+        }
+    }
+
+    .has {
+        color: $main-color;
+    }
+
+    .none-view {
+        -webkit-filter: grayscale(100%);
+    }
+    .none-box {
+        margin-top: 45%;
+        text-align: center;
+        color: $font-color;
+        .none-icon {
+            margin: 0 auto;
+            font-size: pxToRem(180);
+        }
+        .none-title {
+            margin: 0;
+            font-size: pxToRem(24);
+            font-weight: normal;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@charset "utf-8";
+@import "../utils/colors";
+@import "../utils/mixin";
+@import "../utils/function";
+
+.footer-components {
+    @include box(center, justify);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: pxToRem(560);
+    height: pxToRem(100);
+    padding: 0 pxToRem(40);
+    border-top: pxToRem(1) solid $line-color;
+    overflow: hidden;
+    background: $back-color;
+
+    .footer-box {
+        font-size: pxToRem(20);
+        color: #777;
+        text-align: center;
+    }
+    .footer-icon {
+        display: block;
+        margin: 0 auto pxToRem(10);
+        width: pxToRem(50);
+        height: pxToRem(50);
+        font-size: pxToRem(48);
+        text-align: center;
+    }
+}

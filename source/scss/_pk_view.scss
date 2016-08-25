@@ -1,0 +1,136 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.pk-view {
+    @include clear-header();
+    background: $back-color;
+    .top-banner {
+        padding-top: pxToRem(10);
+        height: pxToRem(190);
+        background: $main-color;
+
+        .banner-img {
+            width: pxToRem(362);
+            height: pxToRem(136);
+            margin: 0 auto;
+            @include backgroundImg($pk-header-img);
+        }
+        .result {
+            text-align: right;
+            margin-right: pxToRem(30);
+            font-size: pxToRem(24);
+            color: $back-color;
+        }
+    }
+    .tab {
+        @include box(center, justify);
+        padding: 0 pxToRem(80);
+        height: pxToRem(80);
+        font-size: pxToRem(28);
+        color: $title-color;
+        border: pxToRem(1) solid $line-color;
+        .active {
+            position: relative;
+            color: $main-color;
+            height: pxToRem(80);
+            line-height: pxToRem(80);
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: pxToRem(90);
+                height: pxToRem(6);
+                background: $main-color;
+            }
+        }
+    }
+    .goods {
+        width: 50%;
+        padding-top: pxToRem(25);
+        border-bottom: 1px solid $line-color;
+        &:nth-child(odd) {
+            border-right: 1px solid $line-color;
+        }
+        .good-img {
+            margin: 0 pxToRem(30) pxToRem(20);
+            width: pxToRem(260);
+            height: pxToRem(260);
+            background-size: contain;
+            background: #fff no-repeat center;
+        }
+        .good-title {
+            width: pxToRem(270);
+            height: pxToRem(65);
+            overflow: hidden;
+            margin: 0 auto;
+            font-size: pxToRem(28);
+            text-align: left;
+            color: #333;
+        }
+        .good-info {
+            position: relative;
+            margin: pxToRem(10) pxToRem(25) pxToRem(18);
+            font-size: pxToRem(22);
+            color: $font-text-color;
+        }
+        .add-shop {
+            position: absolute;
+            bottom: pxToRem(-10);
+            right: 0;
+            @include border-box(54);
+            color: $back-color;
+            background: $btn-back-color;
+            font-size: pxToRem(28);
+        }
+        .join-shop {
+            display: block;
+            margin: 0 auto pxToRem(25);
+            width: pxToRem(270);
+            height: pxToRem(60);
+            line-height: pxToRem(60);
+            text-align: center;
+            background: $main-color;
+            font-size: pxToRem(28);
+            color: $back-color;
+        }
+        .text-box {
+            width: pxToRem(210);
+            @include box(center, justify);
+            .right {
+                display: -webkit-box;
+            }
+        }
+        .progress {
+            position: relative;
+            width: pxToRem(210);
+            margin-bottom: pxToRem(8);
+            transform: skew(-30deg);
+            background: $progress-color;
+            overflow: hidden;
+            .new, .tag {
+                display: block;
+                height: pxToRem(10);
+            }
+            .new {
+                background: linear-gradient(to right, #ffb026, #ff8426);
+            }
+            .tag {
+                position: absolute;
+                top: 0;
+                width: pxToRem(6);
+                transform: skew(-30deg);
+                background: $back-color;
+            }
+        }
+    }
+    .pk-footer {
+        height: pxToRem(66);
+        padding: pxToRem(16);
+        font-size: pxToRem(26);
+        color: $font-color;
+        text-align: center;
+        background: $body-back-color;
+    }
+}

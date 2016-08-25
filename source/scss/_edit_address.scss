@@ -1,0 +1,52 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.edit-address-list {
+    @include clear-header();
+    padding-top: pxToRem(20);
+
+    .edit-body {
+         @include box(center, start);
+         padding: 0 pxToRem(30);
+         height: pxToRem(92);
+         background: $back-color;
+         border-bottom: pxToRem(1) solid $line-color;
+         color: $font-color;
+         font-size: pxToRem(28);
+     }
+    .edit-title {
+        width: pxToRem(166);
+    }
+    .virtual-input {
+        width: pxToRem(350);
+        height: pxToRem(50);
+        font-size: pxToRem(30);
+        color: #555;
+    }
+    .text {
+        width: pxToRem(580);
+        margin: pxToRem(20) auto;
+        color: $font-color;
+        font-size: pxToRem(24);
+        line-height: 1.3;
+    }
+    %btn-base {
+        display: block;
+        width: pxToRem(575);
+        height: pxToRem(80);
+        margin: pxToRem(30) auto;
+        @include border-radius(pxToRem(5));
+        font-size: pxToRem(30);
+        color: $back-color;
+    }
+    .save-btn {
+        @extend %btn-base;
+        background: $btn-back-color;
+    }
+    .delete-btn {
+        @extend %btn-base;
+        background: $main-color;
+    }
+}

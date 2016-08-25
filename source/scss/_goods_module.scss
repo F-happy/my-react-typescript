@@ -1,0 +1,43 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.goods-module-view {
+    @include clear-header();
+
+    .goods-box {
+        height: pxToRem(160);
+        @include box();
+        background: $back-color;
+        border-bottom: pxToRem(1) solid $line-color;
+    }
+    .goods-img {
+        width: pxToRem(120);
+        height: pxToRem(120);
+    }
+    .goods-info {
+        width: pxToRem(360);
+        margin: 0 pxToRem(20);
+        .good-name {
+            height: pxToRem(60);
+            color: $title-color;
+            font-size: pxToRem(28);
+        }
+        .good-money {
+            margin-top: pxToRem(14);
+            @include box(center, justify);
+            color: $font-color;
+            font-size: pxToRem(24);
+            .good-total, .good-remain {
+                display: block;
+            }
+        }
+    }
+    .icon-add-shop {
+        @include border-box(54);
+        color: $back-color;
+        background: $btn-back-color;
+        font-size: pxToRem(28);
+    }
+}

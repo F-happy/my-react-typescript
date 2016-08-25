@@ -1,0 +1,44 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.my-info-view {
+    @include clear-header();
+    background: $back-color;
+
+    %my-info-base {
+        @include box(center, justify);
+        padding: 0 pxToRem(30);
+        color: $font-text-color;
+        font-size: pxToRem(28);
+        border-bottom: pxToRem(1) solid $line-color;
+        i {
+            display: block;
+            color: $line-color;
+            margin-left: pxToRem(16);
+        }
+    }
+    .right-box {
+        @include box();
+    }
+    .user-img-box {
+        @extend %my-info-base;
+        height: pxToRem(180);
+        .user-img{
+            @include border-box(126);
+        }
+    }
+    .user-name-box {
+        @extend %my-info-base;
+        height: pxToRem(90);
+        .my-name {
+            font-size: pxToRem(30);
+            color: $title-color;
+        }
+    }
+    .my-money-box {
+        @extend %my-info-base;
+        height: pxToRem(90);
+    }
+}

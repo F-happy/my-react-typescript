@@ -1,0 +1,97 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.login-view {
+    @include clear-header();
+
+    .login-controller {
+        @include box();
+        background: $back-color;
+        margin: 0 auto pxToRem(30);
+        border-top: 1px solid $line-color;
+        border-bottom: 1px solid $line-color;
+        .login-result {
+            width: 50%;
+            height: pxToRem(80);
+            line-height: pxToRem(80);
+            text-align: center;
+            color: $title-color;
+            font-size: pxToRem(28);
+        }
+        .active {
+            position: relative;
+            color: $main-color;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: pxToRem(320);
+                height: pxToRem(8);
+                background: $main-color;
+            }
+        }
+    }
+    .user-input-box {
+        @include box(center, start);
+        padding: 0 pxToRem(30);
+        height: pxToRem(90);
+        background: $back-color;
+        border-bottom: pxToRem(1) solid $line-color;
+        color: $title-color;
+        font-size: pxToRem(28);
+        .login-title {
+            width: pxToRem(100);
+        }
+        .login-input {
+            width: pxToRem(300);
+            height: pxToRem(50);
+            font-size: pxToRem(26);
+            color: $font-color;
+        }
+    }
+    .login-btn {
+        display: block;
+        margin: pxToRem(44) auto pxToRem(18);
+        width: pxToRem(580);
+        height: pxToRem(80);
+        @include border-radius(pxToRem(5));
+        background: $main-color;
+        font-size: pxToRem(30);
+        color: $back-color;
+    }
+    .forget-password {
+        padding-right: pxToRem(35);
+        font-size: pxToRem(26);
+        color: $btn-back-color;
+        text-align: right;
+    }
+    .push-code {
+        width: pxToRem(172);
+        height: pxToRem(50);
+        font-size: pxToRem(24);
+        line-height: pxToRem(50);
+        color: $font-color;
+        text-align: center;
+        border: pxToRem(1) solid $font-color;
+        @include border-radius(pxToRem(5));
+    }
+    .read-server {
+        margin-top: pxToRem(18);
+        padding-left: pxToRem(30);
+        @include box(center, start);
+        font-size: pxToRem(22);
+        color: $font-color;
+        .ok-box {
+            width: pxToRem(29);
+            height: pxToRem(29);
+            margin-right: pxToRem(20);
+            border: pxToRem(1) solid $font-color;
+            color: $btn-back-color;
+            font-size: pxToRem(30);
+            background: $back-color;
+        }
+    }
+}

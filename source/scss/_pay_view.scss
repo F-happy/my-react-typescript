@@ -1,0 +1,172 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.pay-view {
+    @include clear-header();
+    %pay-line {
+        padding: 0 pxToRem(20);
+        @include box(center, justify);
+        height: pxToRem(90);
+        font-size: pxToRem(28);
+        color: $font-text-color;
+    }
+    .pay-header {
+        padding: pxToRem(30) pxToRem(20) pxToRem(20);
+        background: $back-color;
+        font-size: pxToRem(28);
+        color: $font-text-color;
+        .total-goods {
+            margin-top: pxToRem(16);
+            overflow: hidden;
+            clear: both;
+        }
+        .goods-list {
+            margin-top: pxToRem(20);
+            padding-top: pxToRem(10);
+            border-top: pxToRem(1) solid $line-color;
+            li {
+                @include box(center, justify);
+                font-size: pxToRem(24);
+                line-height: pxToRem(38);
+                color: $font-color;
+            }
+            span {
+                display: -webkit-box;
+            }
+        }
+        .total-num {
+            margin-left: pxToRem(15);
+            font-size: pxToRem(32);
+            color: $main-color;
+        }
+        .total-good-num {
+            margin-left: pxToRem(15);
+            font-size: pxToRem(30);
+            color: $title-color;
+        }
+        .right-btn {
+            float: right;
+        }
+    }
+    .pay-money {
+        margin: pxToRem(20) auto;
+        background: $back-color;
+        .pay-redpack {
+            @extend %pay-line;
+            border-bottom: pxToRem(1) solid $line-color;
+            .has-redpack {
+                display: block;
+                margin-left: pxToRem(16);
+                width: pxToRem(90);
+                height: pxToRem(30);
+                font-size: pxToRem(20);
+                color: $back-color;
+                text-align: center;
+                line-height: pxToRem(35);
+                background: $btn-back-color;
+                @include border-radius(pxToRem(5));
+            }
+            .redpack-left, .redpack-right {
+                @include box();
+            }
+            .right-icon {
+                margin-left: pxToRem(10);
+                font-size: pxToRem(32);
+            }
+        }
+        .balance {
+            @extend %pay-line;
+            .have-balance {
+                margin-left: pxToRem(16);
+                font-size: pxToRem(22);
+                color: $font-color;
+            }
+            .balance-right {
+                @include box();
+            }
+            .charge-box {
+                display: block;
+                margin-left: pxToRem(6);
+                width: pxToRem(36);
+                height: pxToRem(36);
+                color: $back-color;
+                text-align: center;
+                line-height: pxToRem(40);
+                font-size: pxToRem(38);
+                @include border-radius(pxToRem(5));
+            }
+            .box-none {
+                border: pxToRem(2) solid $line-color;
+            }
+            .box {
+                background: $main-color;
+            }
+        }
+    }
+    .pay-method {
+        background: $back-color;
+    }
+    .pay-go {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        @include box();
+        z-index: 999;
+        width: 100%;
+        height: pxToRem(120);
+        background: $back-color;
+        .pay-btn {
+            display: block;
+            width: 90%;
+            height: pxToRem(80);
+            background: $main-color;
+            font-size: pxToRem(34);
+            color: $back-color;
+            @include border-radius(pxToRem(5));
+        }
+    }
+    .method-title {
+        @extend %pay-line;
+        line-height: pxToRem(90);
+        height: pxToRem(90);
+        border-bottom: pxToRem(1) solid $line-color;
+    }
+    .method-lists {
+        @extend %pay-line;
+        height: 100%;
+        li {
+            width: 100%;
+            height: pxToRem(110);
+            @include box(center, justify);
+            .method-name {
+                color: $title-color;
+            }
+            .method-info {
+                margin-top: pxToRem(8);
+                font-size: pxToRem(22);
+                color: $font-color;
+            }
+        }
+        .pay-left-box {
+            @include box();
+        }
+        .pay-logo {
+            display: block;
+            margin-right: pxToRem(16);
+            width: pxToRem(66);
+            height: pxToRem(66);
+            @include border-radius(pxToRem(10));
+        }
+        .radio-box {
+            @include border-box(28);
+            border: pxToRem(2) solid $line-color;
+            @include box();
+            .radio {
+                @include border-box(15);
+                background: #3ce076;
+            }
+        }
+    }
+}

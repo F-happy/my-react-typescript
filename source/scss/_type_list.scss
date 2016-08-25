@@ -1,0 +1,30 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.type-list-view {
+    @include clear-header();
+    padding-top: pxToRem(20);
+    .type-lists {
+        border-top: pxToRem(1) solid $line-color;
+        font-size: pxToRem(28);
+        color: $font-text-color;
+        background: $back-color;
+    }
+    .type-img {
+        margin: {
+            left: pxToRem(30);
+            right: pxToRem(20);
+        };
+        @include border-box(50);
+    }
+    a {
+        @include box(center, start);
+        height: pxToRem(90);
+        border-bottom: pxToRem(1) solid $line-color;
+    }
+    span {
+        display: block;
+    }
+}

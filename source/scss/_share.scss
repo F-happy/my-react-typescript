@@ -1,0 +1,88 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.share-view {
+    @include clear-header();
+    .share-body-box {
+        margin-bottom: pxToRem(100);
+    }
+    .shares {
+        width: pxToRem(590);
+        margin: 0 auto;
+        padding: pxToRem(20) pxToRem(25);
+        background: $back-color;
+    }
+    .user-box {
+        @include box(start, justify);
+        .user-info {
+            margin-left: pxToRem(16);
+            .user-title {
+                @include omitWord(pxToRem(330));
+                color: $title-color;
+                font-size: pxToRem(28);
+            }
+            .user-text {
+                margin-top: pxToRem(6);
+                color: $font-color;
+                font-size: pxToRem(20);
+                .num {
+                    color: $btn-back-color;
+                }
+                .luck_color {
+                    color: $main-color;
+                }
+            }
+        }
+        .user-img {
+            @include border-box(60);
+        }
+        .time {
+            font-size: pxToRem(22);
+            color: $font-color;
+        }
+    }
+    .share-body {
+        margin: pxToRem(20) auto 0;
+
+        .share-description {
+            font-size: pxToRem(28);
+            color: $title-color;
+        }
+        .img-box {
+            margin-top: pxToRem(16);
+            @include box(center, justify);
+            .share-img {
+                width: pxToRem(190);
+                height: pxToRem(190);
+                background: #fff no-repeat center;
+                background-size: 100% 100%;
+            }
+        }
+    }
+    .share-footer {
+        @include box();
+        height: pxToRem(70);
+        margin-bottom: pxToRem(20);
+        border-top: 1px solid $line-color;
+        border-bottom: 1px solid $line-color;
+        background: $back-color;
+        font-size: pxToRem(26);
+        text-align: center;
+        .add-luck {
+            width: pxToRem(300);
+            color: $btn-back-color;
+        }
+        .join-goods {
+            display: inline-block;
+            width: pxToRem(300);
+            color: $main-color;
+        }
+        .line {
+            width: 1px;
+            height: pxToRem(50);
+            background: $line-color;
+        }
+    }
+}

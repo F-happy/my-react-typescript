@@ -1,0 +1,44 @@
+{
+  "name": "my-react-typescript",
+  "version": "1.0.0",
+  "description": "这是 react 和 typescript 结合的项目",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --host 0.0.0.0 --port 1024 --content-base build",
+    "build": "webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:F-happy/my-react-typescript.git"
+  },
+  "keywords": [
+    "typescript",
+    "scss",
+    "web"
+  ],
+  "author": "fuhuixiang",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "node-sass": "^3.8.0",
+    "postcss-loader": "^0.10.1",
+    "precss": "^1.4.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-router": "^2.7.0",
+    "sass-loader": "^4.0.0",
+    "string-replace-loader": "^1.0.3",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.2",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.0",
+    "whatwg-fetch": "^1.0.0"
+  }
+}

@@ -1,0 +1,249 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.shop-cart-view {
+    @include clear-header();
+    margin-bottom: pxToRem(100);
+
+    .none-shop {
+        padding-top: pxToRem(140);
+        width: 100%;
+        height: pxToRem(450);
+        background: $body-back-color;
+        text-align: center;
+        border-bottom: pxToRem(1) solid $line-color;
+        .none-cart {
+            margin: 0 auto;
+            width: pxToRem(250);
+            height: pxToRem(250);
+            @include backgroundImg($icon-shop-cart);
+        }
+        .none-title {
+            margin: pxToRem(10) auto pxToRem(16);
+            font-size: pxToRem(30);
+            color: $font-color;
+        }
+        .shop-btn {
+            display: block;
+            margin: 0 auto;
+            width: pxToRem(250);
+            height: pxToRem(64);
+            line-height: pxToRem(64);
+            color: $back-color;
+            font-size: pxToRem(30);
+            background: $btn-back-color;
+            @include border-radius(pxToRem(5));
+        }
+    }
+    .you-like {
+        .like-title {
+            position: relative;
+            @include box();
+            height: pxToRem(74);
+            text-align: center;
+            color: $font-text-color;
+            font-size: pxToRem(26);
+            &:before {
+                position: absolute;
+                top: pxToRem(37);
+                left: pxToRem(46);
+                content: '';
+                width: pxToRem(185);
+                height: pxToRem(1);
+                background: $line-color;
+            }
+            &:after {
+                position: absolute;
+                top: pxToRem(37);
+                right: pxToRem(46);
+                content: '';
+                width: pxToRem(185);
+                height: pxToRem(1);
+                background: $line-color;
+            }
+            .you-love-icon {
+                display: -webkit-box;
+                margin-right: pxToRem(10);
+            }
+        }
+        .like-goods {
+            @include box();
+            width: pxToRem(600);
+            margin: 0 auto;
+            overflow-x: scroll;
+        }
+        .like-good {
+            margin-right: pxToRem(30);
+            text-align: center;
+            &:last-child {
+                margin-right: 0;
+            }
+            .good-img {
+                width: pxToRem(180);
+                height: pxToRem(180);
+                background: #fff no-repeat center;
+                background-size: 100% 100%;
+            }
+            .good-name {
+                margin: pxToRem(20) auto pxToRem(10);
+                width: pxToRem(160);
+                height: pxToRem(47);
+                overflow : hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                font-size: pxToRem(24);
+                color: $title-color;
+            }
+            .progress {
+                margin: 0 auto;
+                overflow: hidden;
+                width: pxToRem(126);
+                height: pxToRem(10);
+                background: $progress-color;
+                @include border-radius(pxToRem(5));
+                .progress-new {
+                    display: block;
+                    height: pxToRem(10);
+                    background: linear-gradient(to right, #ffb026, #ff8426);
+                }
+            }
+        }
+    }
+    .shop-lists {
+        padding-bottom: pxToRem(100);
+    }
+    .shop-good {
+        background: $back-color;
+        border-bottom: pxToRem(1) solid $line-color;
+        .good-title {
+            @include box();
+            margin: 0 auto;
+            width: pxToRem(580);
+            height: pxToRem(70);
+            color: $title-color;
+            font-size: pxToRem(28);
+            border-bottom: pxToRem(1) solid $line-color;
+            .text {
+                display: inline-block;
+                @include omitWord(pxToRem(470));
+                margin-right: pxToRem(50);
+            }
+            .good-del {
+                display: inline-block;
+                font-size: pxToRem(26);
+                color: $font-text-color;
+            }
+        }
+        .good-body {
+            @include box(center, justify);
+            padding: 0 pxToRem(30);
+            height: pxToRem(170);
+            .shop-img {
+                width: pxToRem(130);
+                height: pxToRem(130);
+            }
+            .shop-info {
+                width: pxToRem(335);
+                margin-left: pxToRem(30);
+                margin-right: pxToRem(25);
+                color: $font-color;
+                font-size: pxToRem(22);
+            }
+            .shop-info-title {
+                @include box(center, justify);
+            }
+            .title-text {
+                display: -webkit-box;
+            }
+            .shop-num {
+                @include box();
+                width: pxToRem(240);
+                height: pxToRem(60);
+                margin: pxToRem(15) 0 pxToRem(10);
+                border: pxToRem(1) solid $line-color;
+                font-size: pxToRem(20);
+                text-align: center;
+            }
+            .shop-minus-box {
+                width: pxToRem(60);
+                height: pxToRem(60);
+                background: $back-color;
+                font-size: pxToRem(38);
+                color: $font-color;
+                border-right: pxToRem(1) solid $line-color;
+            }
+            .shop-input {
+                width: pxToRem(118);
+                overflow: hidden;
+                input {
+                    width: 100%;
+                    height: pxToRem(60);
+                    font-family: inherit;
+                    font-size: pxToRem(28);
+                    color: $font-color;
+                    font-weight: inherit;
+                    padding: pxToRem(18);
+                    text-align: center;
+                    border: none;
+                    box-sizing: border-box;
+                    &::-webkit-input-placeholder {
+                        color: $back-color;
+                        vertical-align: top;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+            .shop-add-box {
+                width: pxToRem(60);
+                height: pxToRem(60);
+                background: $back-color;
+                font-size: pxToRem(38);
+                color: $font-color;
+                border-left: pxToRem(1) solid $line-color;
+            }
+            .shop-message {
+                font-size: pxToRem(20);
+            }
+            .shop-join-btn {
+                @include border-box(62);
+                background: $main-color;
+                color: $back-color;
+                font-size: pxToRem(20);
+                border: none;
+            }
+        }
+    }
+    .add-shop-banner {
+        position: fixed;
+        left: 0;
+        bottom: pxToRem(100);
+        @include box();
+        .shop-total {
+            padding: pxToRem(20) 0 0 pxToRem(30);
+            width: pxToRem(425);
+            height: pxToRem(80);
+            color: $back-color;
+            font-size: pxToRem(30);
+            background: #44434b;
+        }
+        .shop-good-num {
+            margin-top: pxToRem(10);
+            color: $progress-color;
+            font-size: pxToRem(22);
+        }
+        .go-shop {
+            width: pxToRem(185);
+            height: pxToRem(100);
+            background: $main-color;
+            font-size: pxToRem(30);
+            color: $back-color;
+            border: none;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.me-view {
+    @include clear-header();
+    //margin: pxToRem(80) auto pxToRem(100);
+    padding-bottom: pxToRem(120);
+    background: $body-back-color;
+
+    .user-info {
+        background: $back-color;
+        .user-header {
+            height: pxToRem(160);
+            @include box();
+            .user-img {
+                @include border-box(110);
+                margin-right: pxToRem(25);
+                overflow: hidden;
+            }
+            .user-content {
+                width: pxToRem(430);
+            }
+            .user-name {
+                font-size: pxToRem(30);
+                color: $title-color;
+            }
+            .user-id {
+                margin-top: pxToRem(10);
+                font-size: pxToRem(24);
+                color: $font-color;
+            }
+        }
+        .user-body {
+            height: pxToRem(170);
+            @include box();
+            border-top: pxToRem(1) solid $line-color;
+            border-bottom: pxToRem(1) solid $line-color;
+            text-align: center;
+            .user-font {
+                margin: pxToRem(10) auto;
+                font-size: pxToRem(26);
+                color: $title-color;
+            }
+            .text {
+                font-size: pxToRem(24);
+                color: $font-color;
+            }
+            .user-redpack, .user-money, .user-luck-dou {
+                display: block;
+                width: pxToRem(210);
+            }
+        }
+        .line {
+            width: pxToRem(1);
+            height: pxToRem(110);
+            background: $line-color;
+        }
+    }
+    .record-lists {
+        margin: pxToRem(20) auto;
+        background: $back-color;
+    }
+    .other-list {
+        background: $back-color;
+        font-size: pxToRem(30);
+        color: $title-color;
+        .me-icon {
+            width: pxToRem(41);
+            height: pxToRem(41);
+            font-size: pxToRem(42);
+            color: $font-color;
+        }
+    }
+    li {
+        @include box();
+        height: pxToRem(94);
+        border-bottom: pxToRem(1) solid $line-color;
+        * {
+            display: -webkit-box;
+        }
+        .list-content {
+            width: pxToRem(490);
+            margin-left: pxToRem(30);
+        }
+    }
+}

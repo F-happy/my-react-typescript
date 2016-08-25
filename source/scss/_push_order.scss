@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import "utils/colors";
+@import "utils/mixin";
+@import "utils/function";
+
+.push-order-view {
+    @include clear-header();
+
+    .push-header {
+        padding: pxToRem(30);
+        background: $back-color;
+    }
+    .input-content {
+        width: pxToRem(580);
+        height: pxToRem(166);
+        overflow: scroll;
+        .user-input {
+            width: 100%;
+            height: pxToRem(146);
+            font-size: pxToRem(28);
+            color: $title-color;
+            &::-webkit-input-placeholder {
+                color: #b4b4b4;
+                vertical-align: top;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    .image-box {
+        @include box(center, start);
+        .push-img {
+            display: block;
+            width: pxToRem(188);
+            height: pxToRem(188);
+            &:nth-child(even){
+                margin: 0 pxToRem(10);
+            }
+        }
+        .push-btn {
+            @include box();
+            width: pxToRem(186);
+            height: pxToRem(186);
+            border: pxToRem(2) solid #b4b4b4;
+            font-size: pxToRem(50);
+            color: #b4b4b4;
+        }
+    }
+    .push-save-btn {
+        display: block;
+        margin: pxToRem(50) auto;
+        width: pxToRem(580);
+        height: pxToRem(80);
+        @include border-radius(pxToRem(5));
+        background: $main-color;
+        font-size: pxToRem(30);
+        color: $back-color;
+    }
+}
