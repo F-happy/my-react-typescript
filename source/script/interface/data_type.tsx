@@ -110,7 +110,7 @@ export type shareType = {
 }
 
 export type shopCartType = {
-    key: string,
+    key: number,
     gid: number,
     period: number,
     title: string,

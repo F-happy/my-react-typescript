@@ -17,6 +17,7 @@ export interface addressProps {
 
 export interface GoodInfoProps {
     params?: {sid: number};
+    userList: any;
 }
 
 export interface UserListProps {
